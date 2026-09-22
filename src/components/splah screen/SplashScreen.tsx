@@ -70,7 +70,7 @@ export default function SplashScreen() {
         </div>
 
         {/* Loading */}
-        <div className="mt-10 w-full max-w-xl">
+        <div className="mt-10 w-full max-w-[200px]">
 
           {/* Loading line */}
           <div className="relative h-[3px] w-full overflow-hidden rounded-full bg-slate-800">
