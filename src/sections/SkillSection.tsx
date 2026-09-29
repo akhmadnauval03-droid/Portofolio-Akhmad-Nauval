@@ -25,7 +25,7 @@ const skills = [
 
 export default function SkillSection() {
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 scroll-mt-24">
       <div className="w-[90%] mx-w-6xl mx-auto space-y-12">
         <SectionHeader
         title="My"

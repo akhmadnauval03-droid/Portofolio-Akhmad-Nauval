@@ -54,7 +54,7 @@ export default function ContactSection() {
   };
 
     return (
-        <section id="contact" className="py-24 relative overflow-hidden">
+        <section id="contact" className="py-24 relative overflow-hidden scroll-mt-24">
             <div className="absolute top-1/3 right-1/4 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
             <div className="w-[90%] max-w-6xl mx-auto relative z-10 space-y-16">
                 <SectionHeader title="Lets's build" higlight="something great" badge="Contact" description="Have a project in mind I'd love to hear about it. Let's connect." />

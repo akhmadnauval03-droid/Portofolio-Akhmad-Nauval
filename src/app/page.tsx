@@ -7,10 +7,12 @@ import Footer from "@/sections/Footer";
 import { Toaster } from "react-hot-toast";
 import AnimationLayout from "@/components/layout/AnimationLayout";
 import SplashScreen from "@/components/splah screen/SplashScreen";
+import Navbar from "@/components/navbar/Navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <SplashScreen />
 
       <AnimationLayout>

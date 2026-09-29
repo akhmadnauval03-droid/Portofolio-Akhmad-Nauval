@@ -1,51 +1,71 @@
-import SectionHeader from "@/components/ui/SectionHeader"
-import ProjectCard from "@/components/project/ProjectCard"
+"use client";
 
-const projects = [
-    {
-        title: "Website SMKN 1 PASURUAN",
-        description: "The SMKN 1 PASURUAN website is an interactive digital educational profile platform designed as the official school information center. This website aims to provide accurate information, increase school transparency, introduce the school profile to the public, and serve as a two-way communication medium between the school and students, parents, alumni, prospective students, and the general public.",
-        image: "/images/projek1.png",
-        tags: ["HTML", "CSS"],
-        liveURL: " https://akhmadnauval03-droid.github.io/Web-SMKN-1-PASURUAN/",
-        githubURL: "https://github.com/akhmadnauval03-droid/Web-SMKN-1-PASURUAN"
-    },
-    {
-        title: "Figma",
-        description: "A UI/UX design concept for a modern learning platform designed to make studying more engaging and organized. StudyLine features a clean interface with learning materials, progress tracking, challenges, and interactive elements to help users stay motivated throughout their learning journey. The entire interface was designed in Figma with a focus on usability, visual consistency, and user experience.",
-        image: "/images/projek2.png",
-        tags: ["UI/UX", "Figma", "Design"],
-        liveURL: "https://www.figma.com/design/YpFlfBw6mLpycCCePYiUbX/Untitled?node-id=0-1&t=EcQ1L82E16Sqd9LQ-1", 
-    },
-    {
-        title: "Management Siswa",
-        description: "A web-based student management system developed to help schools efficiently manage student data. The system provides features for student registration, class management, and a student disciplinary system within a single, centralized platform.",
-        image: "/images/ms.png",
-        tags: ["Next.js","TypeScript", "Tailwind CSS", "shadcn/ui"],
-    },
-]
+import { useMemo, useState } from "react";
+import { FiSearch } from "react-icons/fi";
+import SectionHeader from "@/components/ui/SectionHeader";
+import ProjectCard from "@/components/project/ProjectCard";
+import { projects } from "@/data/projects";
 
 export default function ProjectSection() {
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const filteredProjects = useMemo(() => {
+        const query = searchQuery.trim().toLowerCase();
+
+        if (!query) return projects;
+
+        return projects.filter((project) =>
+            project.title.toLowerCase().includes(query)
+        );
+    }, [searchQuery]);
+
     return (
-        <section id="projects" className="py-24 relative">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl
-            bg-primary/10"/>
+        <section id="projects" className="py-24 relative scroll-mt-24">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
             <div className="w-[90%] mx-w-6xl mx-auto space-y-12">
                 <SectionHeader
-                title="Some of my recent"
-                higlight="word"
-                badge="Projects"
-                description="a selection of projects showcasing my ability to design, build and scale modern fullstack application." />
+                    title="Some of my recent"
+                    higlight="word"
+                    badge="Projects"
+                    description="a selection of projects showcasing my ability to design, build and scale modern fullstack application."
+                />
 
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gp-10">
-                {projects.map((project, index) => (
-                    <div key={index} data-aos="fade-right"data-aos-delay={index * 100}data-aos-anchor-placement="top-center">
-                        <ProjectCard {...project}/>
+                <div className="max-w-md">
+                    <label htmlFor="project-search" className="sr-only">
+                        Search projects...
+                    </label>
+                    <div className="relative">
+                        <FiSearch className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base text-text-muted" />
+                        <input
+                            id="project-search"
+                            type="search"
+                            value={searchQuery}
+                            onChange={(event) => setSearchQuery(event.target.value)}
+                            placeholder="Search projects..."
+                            className="w-full rounded-xl border border-border bg-surface/80 py-3 pl-11 pr-4 text-sm text-text placeholder:text-text-muted outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                        />
                     </div>
-                ))}
-             </div>
+                </div>
+
+                {filteredProjects.length === 0 ? (
+                    <div className="rounded-2xl border border-dashed border-border bg-surface/60 p-8 text-center text-sm text-text-muted">
+                        Tidak ada proyek yang sesuai dengan pencarian "{searchQuery}".
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                        {filteredProjects.map((project, index) => (
+                            <div
+                                key={`${project.title}-${index}`}
+                                data-aos="fade-right"
+                                data-aos-delay={index * 100}
+                                data-aos-anchor-placement="top-center"
+                            >
+                                <ProjectCard {...project} />
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
-    )
-
+    );
 }

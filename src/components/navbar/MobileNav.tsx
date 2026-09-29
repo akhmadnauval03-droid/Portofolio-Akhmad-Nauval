@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { navLinks } from "./Navbar";
 
 interface MobileNavProps {
+    links: { href: string; label: string }[];
     navOpen: boolean;
     onClose: () => void;
 }
 
-export default function MobileNav({ navOpen, onClose }: MobileNavProps) {
+export default function MobileNav({ links, navOpen, onClose }: MobileNavProps) {
     return (
         <>
             <button
@@ -20,7 +20,7 @@ export default function MobileNav({ navOpen, onClose }: MobileNavProps) {
                 className={`fixed top-0 right-0 z-50 h-full w-[80%] sm:w-[60%] lg:hidden bg-surface/95 backdrop-blur-md border border-border flex flex-col items-center justify-center space-y-2 px-6 transition-all duration-500 ${navOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 <ul className="flex flex-col items-center gap-3 text-center">
-                    {navLinks.map((link, index) => (
+                    {links.map((link, index) => (
                         <li key={index}>
                             <Link
                                 href={link.href}

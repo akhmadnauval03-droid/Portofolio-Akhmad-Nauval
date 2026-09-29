@@ -1,10 +1,9 @@
 import Image from "next/image";
 import { LuCode, LuDatabase, LuRocket } from "react-icons/lu";
 
-
 export default function AboutSection() {
     return (
-        <section id="about" className="py-24 overflow-hidden relative">
+        <section id="about" className="py-24 overflow-hidden relative scroll-mt-24">
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl
             bg-primary/10"/>
             <div className="w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -31,12 +30,11 @@ export default function AboutSection() {
                         Hello, I'm AKHMAD NAUVAL
                     </h2>
                     <p className="text-gray-400 max-w-xl">
-                        I am a 11th-grade Software Engineering student at SMKN 1 Kota Pasuruan, focusing on the development of modern and interactive websites. I am passionate about transforming ideas into smooth, functional, and user-friendly digital products. Every project I undertake serves as an opportunity to grow and deliver effective, impactful solutions.
+                    Saya adalah siswa kelas 11 jurusan Rekayasa Perangkat Lunak di SMKN 1 Kota Pasuruan yang berfokus pada pengembangan situs web modern dan interaktif. Saya memiliki semangat tinggi untuk mewujudkan ide menjadi produk digital yang lancar, fungsional, dan ramah pengguna. Setiap proyek yang saya kerjakan menjadi kesempatan bagi saya untuk berkembang serta menghadirkan solusi yang efektif dan berdampak nyata.
                     </p>
                     <p className="text-gray-400 max-w-xl">
-                    I frequently work with HTML, CSS, JavaScript, TypeScript, React, Next.js, and Tailwind CSS, along with MySQL and basic Python. For UI design and development, I rely on Figma and shadcn/ui to build clean, responsive, and consistent user experiences.
+                    Saya sering bekerja menggunakan HTML, CSS, JavaScript, TypeScript, React, Next.js, dan Tailwind CSS, serta MySQL dan Python dasar. Untuk desain dan pengembangan UI, saya mengandalkan Figma dan shadcn/ui guna menciptakan pengalaman pengguna yang bersih, responsif, dan konsisten.
                     </p>
-
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                         <div className="p-4 rounded-xl bg-surface border border-border text-center">
                             <LuCode className="mx-auto mb-2 text-primary w-6 h-6" />

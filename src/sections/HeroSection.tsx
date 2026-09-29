@@ -4,7 +4,7 @@ import { LuArrowRight } from "react-icons/lu";
 import Image  from "next/image";
 export default function HeroSection() {
     return(
-        <section id="home" className="relative min-h-screen overflow-hidden flex items-center pt-30 py-10">
+        <section id="home" className="relative min-h-screen overflow-hidden flex items-center pt-30 py-10 scroll-mt-24">
 
             {/* background glow */}
             <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
@@ -34,8 +34,8 @@ export default function HeroSection() {
                     </h1>
 
                     <p data-aos="fade-up" data-aos-delay="400" className="text-gray-400 max-w-lg tracking-wide">
-                       A Full Stack Web Developer with a strong passion for software engineering. I develop scalable web applications using Next.js, TypeScript, and Supabase.
-                       I am committed to continuous learning, maintaining clean code architecture, and delivering functional digital solutions.
+                       Seorang Full Stack Web Developer dengan minat besar terhadap rekayasa perangkat lunak. Saya mengembangkan aplikasi web yang skalabel menggunakan Next.js, TypeScript, dan Supabase. Saya berkomitmen untuk terus belajar, menjaga arsitektur kode yang bersih, serta menghadirkan solusi digital yang fungsional.
+
                     </p>
 
                     <div className="flex items-center gap-4 pt-2" data-aos="fade-up" data-aos-delay="600">

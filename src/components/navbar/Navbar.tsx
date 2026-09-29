@@ -16,9 +16,13 @@ export const navLinks = [
     { href: "#contact", label: "Contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ sectionPrefix = "" }: { sectionPrefix?: string }) {
     const [scrolled, setScrolled] = useState(false);
     const [navOpen, setNavOpen] = useState(false);
+    const links = navLinks.map((link) => ({
+        ...link,
+        href: `${sectionPrefix}${link.href}`,
+    }));
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,7 +43,7 @@ export default function Navbar() {
                     <Logo />
 
                     <ul className="hidden lg:flex items-center gap-1 py-2.5 px-1 rounded-full bg-surface/60 backdrop-blur-xl border border-border">
-                        {navLinks.map((link, index) => (
+                        {links.map((link, index) => (
                             <li key={index}>
                                 <Link href={link.href} className="px-4 py-2 rounded-full text-sm font-medium text-gray-300 transition-all duration-300 hover:text-primary hover:bg-surface">
                                     {link.label}
@@ -62,7 +66,7 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            <MobileNav navOpen={navOpen} onClose={() => setNavOpen(false)} />
+            <MobileNav links={links} navOpen={navOpen} onClose={() => setNavOpen(false)} />
         </>
     );
 }
