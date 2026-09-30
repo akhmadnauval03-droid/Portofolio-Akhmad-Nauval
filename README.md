@@ -1,16 +1,12 @@
-# Portofolio Akhmad Nauval
+# Portfolio Akhmad Nauval
 
-Website portfolio pribadi yang dibuat untuk menampilkan profil, keahlian, project, dan informasi kontak. Website ini dikembangkan menggunakan **Next.js, TypeScript, dan Tailwind CSS** dengan struktur component yang terorganisir serta dynamic route untuk halaman detail project.
+Website portfolio pribadi yang dibuat menggunakan Next.js, TypeScript, dan Tailwind CSS. Website ini digunakan untuk menampilkan informasi diri, skills, dan project yang pernah dibuat, serta informasi kontak.
 
-## 🌐 Live Website
+## Tentang Project
 
-[Portofolio Akhmad Nauval](https://akhmad-nauval.vercel.app?utm_source=chatgpt.com)
+Portfolio ini dibuat sebagai project pembelajaran web development dan pengembangan portfolio siswa. Website dirancang dengan tampilan modern, responsive, dan mudah digunakan pada berbagai ukuran layar.
 
-## 👨‍💻 Tentang Project
-
-Website ini merupakan project portfolio pribadi yang dikembangkan sebagai media untuk memperkenalkan diri dan menampilkan hasil project yang telah dibuat.
-
-Portfolio berisi beberapa bagian utama, yaitu:
+Di dalam website terdapat beberapa bagian utama, yaitu:
 
 * Home
 * About
@@ -18,192 +14,139 @@ Portfolio berisi beberapa bagian utama, yaitu:
 * Skills
 * Contact
 
-Selain halaman utama, website juga memiliki halaman detail project yang menggunakan **dynamic route** berdasarkan ID project.
+Selain halaman utama, terdapat halaman khusus untuk menampilkan detail setiap project menggunakan dynamic routing.
 
----
+## Teknologi yang Digunakan
 
-## ✨ Fitur
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* React Icons
+* React Hot Toast
 
-### 1. Responsive Design
+## Fitur
 
-Website dibuat responsive menggunakan **Tailwind CSS**, sehingga tampilan dapat menyesuaikan berbagai ukuran layar seperti:
+Beberapa fitur yang terdapat pada website:
 
-* Desktop
-* Laptop
-* Tablet
-* Smartphone
-
-### 2. Component-Based Development
-
-Website menggunakan reusable component agar kode lebih terstruktur dan mudah dikembangkan.
-
-Beberapa component yang digunakan antara lain:
-
-* `HeroSection`
-* `AboutSection`
-* `ProjectSection`
-* `ProjectCard`
-* `SkillSection`
-* `ContactSection`
-* `SectionHeader`
-* `Footer`
-* `SplashScreen`
-
-Penggunaan component membuat setiap bagian website dapat dikembangkan dan digunakan kembali secara lebih mudah.
-
-### 3. Data Project Terstruktur
-
-Informasi project dipisahkan ke dalam file:
-
-```text
-src/data/proyek.ts
-```
-
-Data project berisi informasi seperti:
-
-* ID
-* Nama project
-* Deskripsi
-* Gambar
-* Teknologi
-* Link website
-* Link GitHub
-
-Dengan cara ini, penambahan project baru dapat dilakukan tanpa harus mengubah struktur utama halaman.
-
-### 4. Dynamic Route Project
-
-Website menggunakan **dynamic route Next.js** untuk menampilkan detail setiap project.
-
-Struktur route:
-
-```text
-src/app/projek/[id]/page.tsx
-```
-
-Contoh URL:
-
-```text
-/projek/1
-/projek/2
-/projek/3
-```
-
-Nilai `[id]` digunakan untuk menentukan project yang akan ditampilkan.
-
-Data project kemudian diambil dari:
-
-```text
-src/data/proyek.ts
-```
-
-Sehingga setiap project memiliki halaman detailnya masing-masing.
-
-### 5. Tailwind CSS Styling
-
-Tailwind CSS digunakan untuk membuat dan mengatur tampilan website.
-
-Penggunaannya meliputi:
-
-* Layout
-* Typography
-* Spacing
 * Responsive design
-* Button
-* Card
-* Navbar
-* Hover effect
-* Transition
-* Grid dan Flexbox
+* Navbar untuk navigasi website
+* Hero section
+* About section
+* Skills section
+* Project section
+* Contact section
+* Splash screen / loading screen
+* Animasi dan transition
+* Pencarian project
+* Halaman detail project
+* Dynamic routing
+* Navigasi antar halaman
+* Link project dan repository GitHub
 
-Penggunaan Tailwind CSS membantu membuat tampilan website lebih konsisten dan responsive.
+## Struktur Component
 
-### 6. Splash Screen
+Project menggunakan component agar kode lebih terstruktur dan mudah dikembangkan.
 
-Website memiliki `SplashScreen` yang ditampilkan ketika website pertama kali dibuka.
+Beberapa component yang digunakan:
 
-Splash screen digunakan sebagai tampilan loading sebelum halaman utama ditampilkan.
+* `HeroSection` untuk bagian utama halaman
+* `AboutSection` untuk informasi tentang diri
+* `SkillSection` untuk menampilkan kemampuan
+* `ProjectSection` untuk menampilkan project
+* `ProjectCard` untuk menampilkan informasi setiap project
+* `ContactSection` untuk informasi kontak
+* `SectionHeader` untuk judul setiap section
+* `Footer` untuk bagian footer
+* `SplashScreen` untuk loading screen
+* `AnimationLayout` untuk mengatur animasi halaman
 
----
+## Dynamic Routing
 
-## 🛠️ Teknologi yang Digunakan
+Website menggunakan dynamic routing dari Next.js untuk membuat halaman detail project.
 
-| Teknologi    | Penggunaan                      |
-| ------------ | ------------------------------- |
-| Next.js      | Framework utama website         |
-| React        | Pembuatan component             |
-| TypeScript   | Penulisan kode dengan tipe data |
-| Tailwind CSS | Styling dan responsive design   |
-| React Icons  | Icon pada website               |
-| Git          | Version control                 |
-| GitHub       | Repository project              |
-| Vercel       | Deployment website              |
+Halaman project menggunakan struktur:
 
----
+`/projek/[id]`
 
-## 📁 Struktur Project
+Contoh:
 
-Struktur utama project:
+* `/projek/1` → Website SMKN 1 PASURUAN
+* `/projek/2` → Project berikutnya
+* `/projek/3` → Project berikutnya
 
-```text
-Portofolio-Akhmad-Nauval/
-│
-├── public/
-│   └── images/
-│
-├── src/
-│   ├── app/
-│   │   ├── page.tsx
-│   │   │
-│   │   └── projek/
-│   │       └── [id]/
-│   │           └── page.tsx
-│   │
-│   ├── components/
-│   │   ├── about/
-│   │   ├── contact/
-│   │   ├── hero/
-│   │   ├── project/
-│   │   ├── skill/
-│   │   └── ui/
-│   │
-│   └── data/
-│       └── proyek.ts
-│
-├── .gitignore
-├── next.config.ts
-├── package.json
-├── package-lock.json
-├── postcss.config.mjs
-├── tsconfig.json
-└── README.md
-```
+Setiap project memiliki halaman detail yang berbeda berdasarkan ID project.
 
----
+Dynamic route menggunakan nilai `[id]` untuk menentukan project yang akan ditampilkan.
 
-## 🚀 Menjalankan Project
+## Data Project
 
-Pastikan **Node.js** sudah terinstall pada komputer.
+Data project disimpan secara terpisah di:
 
-### 1. Clone Repository
+`src/data/proyek.ts`
+
+Data tersebut berisi informasi seperti:
+
+* ID project
+* Judul project
+* Deskripsi project
+* Gambar project
+* Teknologi yang digunakan
+* Link project
+* Link repository GitHub
+
+Dengan cara ini, data project lebih mudah dikelola dan digunakan kembali pada halaman project maupun halaman detail.
+
+## Project yang Dibuat
+
+### 1. Website SMKN 1 PASURUAN
+
+Website profil sekolah yang dibuat sebagai media informasi digital untuk SMKN 1 PASURUAN.
+
+Website berisi informasi mengenai sekolah dan beberapa halaman yang digunakan untuk menampilkan informasi kepada siswa, orang tua, alumni, calon siswa, dan masyarakat.
+
+Teknologi:
+
+* HTML
+* CSS
+
+### 2. Project Portfolio
+
+Website portfolio pribadi yang digunakan untuk menampilkan informasi diri, skills, dan project yang pernah dibuat.
+
+Teknologi:
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+
+## Responsive Design
+
+Website dibuat menggunakan pendekatan responsive sehingga dapat digunakan pada berbagai ukuran layar, mulai dari smartphone hingga desktop.
+
+Tampilan juga disesuaikan agar tetap nyaman digunakan pada ukuran layar kecil.
+
+## Cara Menjalankan Project
+
+Clone repository:
 
 ```bash
 git clone https://github.com/akhmadnauval03-droid/Portofolio-Akhmad-Nauval.git
 ```
 
-### 2. Masuk ke Folder Project
+Masuk ke folder project:
 
 ```bash
 cd Portofolio-Akhmad-Nauval
 ```
 
-### 3. Install Dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### 4. Jalankan Development Server
+Jalankan development server:
 
 ```bash
 npm run dev
@@ -215,62 +158,49 @@ Kemudian buka:
 http://localhost:3000
 ```
 
----
+## Pengembangan Lanjutan
 
-## 📌 Pengembangan Lanjutan
+Pada pengembangan lanjutan portfolio, dilakukan beberapa penambahan fitur dan perbaikan pada website.
 
-Pada pengembangan lanjutan portfolio, dilakukan beberapa perubahan dan penambahan fitur, yaitu:
+### Tailwind CSS Styling
 
-1. Menambahkan project baru ke dalam data project.
-2. Memisahkan data project ke dalam `src/data/proyek.ts`.
-3. Merapikan struktur reusable components.
-4. Menggunakan Tailwind CSS untuk styling.
-5. Membuat tampilan responsive.
-6. Menambahkan halaman detail project.
-7. Menggunakan dynamic route `projek/[id]`.
-8. Menambahkan Splash Screen.
-9. Memperbaiki tampilan bagian Skills.
-10. Memperbaiki tampilan bagian Contact.
+Tailwind CSS digunakan untuk mengatur tampilan website agar lebih responsive dan konsisten.
 
----
+Penerapannya meliputi:
 
-## 🎯 Tujuan Project
+* Responsive layout
+* Flexbox dan Grid
+* Typography
+* Spacing
+* Button
+* Card
+* Hover effect
+* Transition
+* Responsive design untuk berbagai ukuran layar
 
-Project ini dibuat untuk:
+### Penambahan Components
 
-* Memperkenalkan profil diri.
-* Menampilkan keahlian di bidang web development.
-* Menampilkan project yang telah dibuat.
-* Menerapkan penggunaan Next.js dan TypeScript.
-* Menerapkan Tailwind CSS dalam pembuatan interface.
-* Mempelajari penggunaan reusable component.
-* Mempelajari penggunaan dynamic route pada Next.js.
-* Menjadi portfolio untuk pengembangan kemampuan di bidang pemrograman.
+Beberapa component ditambahkan agar kode lebih modular dan mudah digunakan kembali.
 
----
+Component tersebut meliputi:
 
-## 👤 Developer
+* `ProjectCard`
+* `SectionHeader`
+* `SplashScreen`
+* `AnimationLayout`
 
-**Akhmad Nauval**
+Dengan penggunaan component, struktur kode menjadi lebih rapi dan mudah dikembangkan.
 
-Student of Software Engineering
-SMKN 1 Kota Pasuruan
+### Dynamic Route Project
 
-### Skills
+Ditambahkan route dinamis:
 
-* HTML
-* CSS
-* JavaScript
-* TypeScript
-* React
-* Next.js
-* Tailwind CSS
-* MySQL
-* Basic Python
+`/projek/[id]`
 
----
+Route ini digunakan untuk membuat halaman detail project berdasarkan ID yang terdapat pada URL.
 
-## 📄 License
+Data project diambil dari:
 
-Project ini dibuat untuk keperluan pembelajaran dan portfolio pribadi.
+`src/data/proyek.ts`
 
+Sehingga setiap project dapat memiliki halaman detail masing-masing tanpa harus membuat halaman baru secara manual untuk setiap project.
