@@ -110,7 +110,28 @@ Teknologi:
 * HTML
 * CSS
 
-### 2. Project Portfolio
+### 2. Figma
+
+Konsep desain UI/UX untuk platform pembelajaran modern yang dirancang agar kegiatan belajar menjadi lebih menarik dan terorganisasi.
+
+Teknologi:
+
+* UI/UX
+* Fgma
+* Design
+
+### 3. Management Siswa
+
+Sebuah sistem manajemen siswa berbasis web yang dikembangkan untuk membantu sekolah mengelola data siswa secara efisien.
+
+Teknologi:
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+
+### 4. Website Portfolio
 
 Website portfolio pribadi yang digunakan untuk menampilkan informasi diri, skills, dan project yang pernah dibuat.
 
