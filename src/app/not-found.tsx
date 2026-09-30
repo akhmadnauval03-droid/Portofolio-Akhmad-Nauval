@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LuArrowLeft } from "react-icons/lu";
 
 export default function NotFound() {
   return (
@@ -41,6 +42,7 @@ export default function NotFound() {
             href="/"
             className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_18px_rgba(255,255,255,0.04)]"
           >
+            <LuArrowLeft aria-hidden="true" className="mr-2 h-4 w-4" />
             Kembali ke Home
           </Link>
 

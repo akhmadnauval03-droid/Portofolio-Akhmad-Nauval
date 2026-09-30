@@ -104,30 +104,34 @@ export default async function ProjectDetailPage({
 
             <div className="relative space-y-6">
               <div className="overflow-hidden rounded-3xl border border-white/10 bg-black shadow-[0_16px_40px_rgba(0,0,0,0.28)]">
-                <div className="relative h-110 w-full overflow-hidden md:h-140 lg:h-160">
+                <div className="relative aspect-4/3 w-full overflow-hidden md:aspect-16/10">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent" />
                 </div>
               </div>
 
               <section className="space-y-8 rounded-3xl border border-white/10 bg-[#121821] p-6">
                 <div className="space-y-4">
-                  <h2 className="border-b border-white/10 pb-3 text-3xl font-bold leading-tight text-white">
+                  <h2 className="border-b border-white/10 pb-3 text-2xl font-bold leading-tight text-white">
                     Description
                   </h2>
-                  <p className="text-lg leading-relaxed text-white/70">{project.description}</p>
+                  <p className="text-base leading-relaxed text-white/70">{project.description}</p>
+                  {project.detailDescription && (
+                    <p className="text-base leading-relaxed text-white/70">
+                      {project.detailDescription}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-4">
-                  <h2 className="border-b border-white/10 pb-3 text-3xl font-bold leading-tight text-white">
+                  <h2 className="border-b border-white/10 pb-3 text-2xl font-bold leading-tight text-white">
                     Fitur project
                   </h2>
-                  <ul className="space-y-3 text-lg leading-relaxed text-white/70">
+                  <ul className="space-y-3 text-base leading-relaxed text-white/70">
                     {project.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
                         <span className="mt-2 h-2 w-2 rounded-full bg-white/90" />
