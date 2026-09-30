@@ -1,88 +1,4 @@
-// "use client";
 
-// import { useEffect, useState } from "react";
-
-// const SPLASH_STORAGE_KEY = "portfolioSplashSeen";
-
-// export default function SplashScreen() {
-//   const [progress, setProgress] = useState(0);
-//   const [isLoading, setIsLoading] = useState(false);
-
-//   useEffect(() => {
-//     const hasSeenSplash = window.localStorage.getItem(SPLASH_STORAGE_KEY) === "true";
-
-//     if (hasSeenSplash) {
-//       setIsLoading(false);
-//       return;
-//     }
-
-//     setIsLoading(true);
-
-//     const interval = setInterval(() => {
-//       setProgress((prev) => {
-//         if (prev >= 100) {
-//           clearInterval(interval);
-//           return 100;
-//         }
-
-//         return prev + 1;
-//       });
-//     }, 20);
-
-//     const timer = setTimeout(() => {
-//       window.localStorage.setItem(SPLASH_STORAGE_KEY, "true");
-//       setIsLoading(false);
-//     }, 2300);
-
-//     return () => {
-//       clearInterval(interval);
-//       clearTimeout(timer);
-//     };
-//   }, []);
-
-//   if (!isLoading) return null;
-
-//   return (
-//     <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#0b1014]">
-//       <div className="absolute inset-0 opacity-40">
-//         <div
-//           className="h-full w-full"
-//           style={{
-//             backgroundImage:
-//               "radial-gradient(circle, rgba(0, 200, 200, 0.35) 1px, transparent 1px)",
-//             backgroundSize: "32px 32px",
-//           }}
-//         />
-//       </div>
-
-//       <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[100px]" />
-
-//       <div className="relative z-10 flex w-full max-w-2xl flex-col items-center px-6">
-//         <div className="flex items-center gap-5">
-//           <div className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-700 bg-[#182127] shadow-[0_0_30px_rgba(0,200,200,0.08)]">
-//             <span className="font-mono text-2xl font-bold text-cyan-400">&lt;/&gt;</span>
-//           </div>
-
-//           <h1 className="text-3xl font-bold tracking-tight text-slate-200 sm:text-4xl">
-//             Akhmad Nauval
-//             <span className="text-cyan-400"></span>
-//           </h1>
-//         </div>
-
-//         <div className="mt-10 w-full max-w-[200px]">
-//           <div className="relative h-[3px] w-full overflow-hidden rounded-full bg-slate-800">
-//             <div
-//               className="absolute left-0 top-0 h-full rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-75"
-//               style={{
-//                 width: `${progress}%`,
-//               }}
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
 "use client";
 
@@ -95,7 +11,6 @@ export default function SplashScreen() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Menggunakan sessionStorage agar status splash hanya tersimpan dalam tab saat ini
     const hasSeenSplash = window.sessionStorage.getItem(SPLASH_STORAGE_KEY) === "true";
 
     if (hasSeenSplash) {
@@ -105,33 +20,35 @@ export default function SplashScreen() {
 
     setIsLoading(true);
 
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
+    let animationFrameId = 0;
+    const duration = 2200;
+    const startTime = performance.now();
 
-        return prev + 1;
-      });
-    }, 20);
+    const tick = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const nextProgress = Math.min((elapsed / duration) * 100, 100);
 
-    const timer = setTimeout(() => {
-      // Simpan status ke sessionStorage
-      window.sessionStorage.setItem(SPLASH_STORAGE_KEY, "true");
-      setIsLoading(false);
-    }, 2300);
+      setProgress(nextProgress);
+
+      if (nextProgress < 100) {
+        animationFrameId = requestAnimationFrame(tick);
+      } else {
+        window.sessionStorage.setItem(SPLASH_STORAGE_KEY, "true");
+        setIsLoading(false);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(tick);
 
     return () => {
-      clearInterval(interval);
-      clearTimeout(timer);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   if (!isLoading) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#0b1014]">
+    <div className="fixed inset-0 z-9999 flex items-center justify-center overflow-hidden bg-[#0b1014]">
       <div className="absolute inset-0 opacity-40">
         <div
           className="h-full w-full"
@@ -157,8 +74,8 @@ export default function SplashScreen() {
           </h1>
         </div>
 
-        <div className="mt-10 w-full max-w-[200px]">
-          <div className="relative h-[3px] w-full overflow-hidden rounded-full bg-slate-800">
+        <div className="mt-10 w-full max-w-50">
+          <div className="relative h-0.75 w-full overflow-hidden rounded-full bg-slate-800">
             <div
               className="absolute left-0 top-0 h-full rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-75"
               style={{

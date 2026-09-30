@@ -30,10 +30,10 @@ export default async function ProjectDetailPage({
       <div className="mx-auto max-w-350 px-4 pb-6 pt-24 md:px-6 lg:px-8">
         <Link
           href="/#projects"
-          className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/4 px-3.5 py-2 text-sm text-white/80 transition hover:border-white/20 hover:text-white"
+          className="mb-5 inline-flex items-center gap-2 rounded-xl border border-transparent bg-transparent px-3.5 py-2 text-sm text-white/80 transition hover:border-white/20 hover:text-white"
         >
           <LuArrowLeft className="h-4 w-4" />
-          Kembali
+          Back to Projects
         </Link>
 
         <div className="mx-auto max-w-7xl">
@@ -47,15 +47,15 @@ export default async function ProjectDetailPage({
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-primary">
                     <LuUserRound className="h-4 w-4" />
-                    Role
+                    ROLE
                   </div>
                   <p className="text-sm leading-relaxed text-white/70">{project.role}</p>
                 </div>
 
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-white/55">
-                    <LuCode className="h-4 w-4" />
-                    Technologies
+                  <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                      <span className="text-[11px] font-bold tracking-tight text-primary">&lt;/&gt;</span>
+                    <span>TECHNOLOGIES</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (

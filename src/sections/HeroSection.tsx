@@ -27,7 +27,10 @@ export default function HeroSection() {
             <div className="relative z-10 w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                 {/* leftside */}
                 <div className="space-y-6">
-                    <span data-aos="fade-up" className="inline-block px-4 py-1.5 rounded-full font-bold text-2xl">Hi, I'm Akhmad Nauval</span>
+                    <div data-aos="fade-up" className="flex items-center gap-4">
+                        <span className="block h-px w-12 bg-white/80" />
+                        <span className="inline-block font-bold text-2xl text-white">Hi, I'm Akhmad Nauval</span>
+                    </div>
                     <h1 data-aos="fade-up" data-aos-delay="200" className="text-4xl md:text-4xl lg:text-6xl font-bold leading-tight text-text/90">
                         FULL STACK
                         <span className="text-primary"> WEB DEVELOPER</span>

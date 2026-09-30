@@ -1,7 +1,10 @@
+export type ProjectCategory = "web" | "mobile" | "iot" | "ui/ux";
+
 export type Project = {
   slug: string;
   title: string;
   role: string;
+  category: ProjectCategory;
   description: string;
   detailDescription?: string;
   image: string;
@@ -18,13 +21,14 @@ export const projects: Project[] = [
     slug: "website-smkn-1-pasuruan",
     title: "Website SMKN 1 PASURUAN",
     role: "Web Developer",
+    category: "web",
     description:
       "Situs web SMKN 1 PASURUAN merupakan platform profil pendidikan digital interaktif yang dirancang sebagai pusat informasi resmi sekolah.",
     detailDescription:
       "Situs web ini bertujuan untuk menyajikan informasi yang akurat, meningkatkan transparansi sekolah, memperkenalkan profil sekolah kepada masyarakat, serta menjadi sarana komunikasi dua arah antara pihak sekolah dengan siswa, orang tua, alumni, calon siswa, dan masyarakat umum.",
     image: "/images/skensa.png",
     tags: ["HTML", "CSS"],
-    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    technologies: ["HTML", "CSS"],
     features: [
       "Landing page sekolah yang menampilkan profil, visi, misi, dan kegiatan utama.",
       "Tampilan responsif untuk desktop, tablet, dan mobile.",
@@ -37,6 +41,7 @@ export const projects: Project[] = [
     slug: "figma-studyline",
     title: "Figma",
     role: "UI/UX Designer",
+    category: "ui/ux",
     description:
       "Konsep desain UI/UX untuk platform pembelajaran modern yang dirancang agar kegiatan belajar menjadi lebih menarik dan terorganisasi.",
     detailDescription:
@@ -55,6 +60,7 @@ export const projects: Project[] = [
     slug: "management-siswa",
     title: "Management Siswa",
     role: "Full-stack Developer",
+    category: "web",
     description:
       "Sebuah sistem manajemen siswa berbasis web yang dikembangkan untuk membantu sekolah mengelola data siswa secara efisien.",
     detailDescription:
@@ -72,11 +78,12 @@ export const projects: Project[] = [
     slug: "website-portofolio",
     title: "Website Portofolio",
     role: "Frontend Developer",
+    category: "web",
     description:
       "Website yang saya buat merupakan website portofolio pribadi yang digunakan untuk memperkenalkan diri, menampilkan kemampuan, serta menunjukkan project yang telah saya kerjakan di bidang pengembangan web.",
     image: "/images/projek4.png",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     features: [
       "Portfolio digital untuk menampilkan pengalaman, keahlian, dan project yang telah dikerjakan.",
       "Terdiri dari section hero, project, experience, skill, dan contact yang responsif.",
