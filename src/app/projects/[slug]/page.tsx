@@ -61,12 +61,10 @@ export default async function ProjectDetailPage({
     notFound();
   }
 
-  const combinedDescription = [
-    project.description,
-    project.detail_description,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const detailParagraphs = project.detail_description
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
 
   const projectNumber = String(projectIndex + 1).padStart(2, "0");
 
@@ -212,9 +210,11 @@ export default async function ProjectDetailPage({
 
             <div className="mb-7 h-px w-full bg-gradient-to-r from-[#20b8b5]/40 via-white/5 to-transparent" />
 
-            <p className="max-w-3xl whitespace-pre-line text-base leading-8 text-gray-400 md:text-[17px]">
-              {combinedDescription}
-            </p>
+            <div className="max-w-3xl space-y-5 text-base leading-8 text-gray-400 md:text-[17px]">
+              {detailParagraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
           </div>
 
           {/* =====================================================

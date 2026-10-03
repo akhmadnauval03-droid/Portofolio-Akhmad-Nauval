@@ -1,6 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FiLayers, FiTag } from "react-icons/fi";
+import {
+    SiCss,
+    SiFigma,
+    SiHtml5,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiTypescript,
+} from "react-icons/si";
 import { LuExternalLink, LuGithub } from "react-icons/lu";
+import type { IconType } from "react-icons";
+
+const tagIcons: Record<string, IconType> = {
+    HTML: SiHtml5,
+    CSS: SiCss,
+    "Next.js": SiNextdotjs,
+    TypeScript: SiTypescript,
+    "Tailwind CSS": SiTailwindcss,
+    Figma: SiFigma,
+    "UI/UX": FiLayers,
+    Design: FiLayers,
+};
 
 interface ProjectCardProps {
     slug?: string,
@@ -40,10 +61,23 @@ export default function ProjectCard({
                     {description}
                 </p>
 
-                <div className="flex gap-2 flex-wrap">
-                    {tags.map((tag) => (
-                        <span key={tag} className="text px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-border">{tag}</span>
-                    ))}
+                <div className="flex flex-wrap gap-3">
+                    {tags.map((tag) => {
+                        const Icon = tagIcons[tag] ?? FiTag;
+
+                        return (
+                            <span
+                                key={tag}
+                                className="group inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition-all duration-200 hover:-translate-y-1 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10"
+                            >
+                                <Icon
+                                    aria-hidden="true"
+                                    className="h-4 w-4 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6"
+                                />
+                                {tag}
+                            </span>
+                        );
+                    })}
                 </div>
 
                 <div className="flex items-center justify-between gap-3 pt-3">

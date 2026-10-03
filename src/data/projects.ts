@@ -63,8 +63,8 @@ export const projects: Project[] = [
     title: "Website Portofolio",
     category: "web",
     description:
-    "The website I created is a personal portfolio site used to introduce myself, showcase my skills, and display the projects I have worked on in the field of web development.",
-    detail_description:"",
+    "A personal portfolio website showcasing a profile, skills, and various web development projects.",
+    detail_description:"I created this personal portfolio website to introduce myself as a Full-Stack Web Developer and to showcase my skills and completed projects. The site features key sections such as Home, About, Projects, Skills, and Contact. In the Projects section, visitors can view various projects—including the SMKN 1 Pasuruan website, Figma UI/UX designs, a student management system, and portfolio websites. Each project entry includes information on the technologies used, along with specific details and relevant links. The site also incorporates search and category filtering features to make finding information easier. This portfolio was developed using Next.js, TypeScript, React, and Tailwind CSS, featuring a modern, responsive design. It also highlights the various technologies and tools I use, such as HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Node.js, Python, TypeScript, Git, GitHub, Figma, MySQL, and Supabase.",
     image: "/images/projek4.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
