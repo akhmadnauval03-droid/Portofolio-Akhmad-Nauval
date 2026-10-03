@@ -43,14 +43,14 @@ export default function NotFound() {
             className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_18px_rgba(255,255,255,0.04)]"
           >
             <LuArrowLeft aria-hidden="true" className="mr-2 h-4 w-4" />
-            Kembali ke Home
+            Back to Home
           </Link>
 
           <Link
             href="/#projects"
             className="inline-flex items-center justify-center rounded-xl border border-gray-700 bg-transparent px-6 py-3 text-sm font-semibold text-white transition duration-300 ease-out hover:-translate-y-1 hover:bg-transparent hover:text-primary hover:shadow-[0_8px_18px_rgba(32,178,166,0.14)] hover:border-primary"
           >
-            Lihat Projects
+            View Projects
           </Link>
         </div>
       </div>

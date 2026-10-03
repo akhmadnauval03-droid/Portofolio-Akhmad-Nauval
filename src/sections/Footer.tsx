@@ -15,8 +15,8 @@ export default function Footer() {
                         <div className="flex justify-center md:justify-start">
                             <Logo/>
                         </div>
-                        <p className="text-sm text-gray-300">
-                            Crafting modern, scalable web experineces with clean code and thougthful design.
+                        <p className="text-xs text-gray-400">
+                            FULL STACK WEB DEVELOPER
                         </p>
                     </div>
 

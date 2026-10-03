@@ -30,7 +30,6 @@ export default function ProjectSection() {
             const searchableText = [
                 project.title,
                 project.description,
-                project.role,
                 ...project.tags,
             ]
                 .join(" ")

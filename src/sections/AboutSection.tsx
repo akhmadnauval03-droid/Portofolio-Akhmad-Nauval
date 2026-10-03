@@ -30,10 +30,10 @@ export default function AboutSection() {
                         Hello, I'm AKHMAD NAUVAL
                     </h2>
                     <p className="text-gray-400 max-w-xl">
-                    Saya adalah siswa kelas 11 jurusan Rekayasa Perangkat Lunak di SMKN 1 Kota Pasuruan yang berfokus pada pengembangan situs web modern dan interaktif. Saya memiliki semangat tinggi untuk mewujudkan ide menjadi produk digital yang lancar, fungsional, dan ramah pengguna. Setiap proyek yang saya kerjakan menjadi kesempatan bagi saya untuk berkembang serta menghadirkan solusi yang efektif dan berdampak nyata.
+                    I am an 11th-grade student majoring in Software Engineering at SMKN 1 Pasuruan City, focusing on the development of modern, interactive websites. I am passionate about transforming ideas into seamless, functional, and user-friendly digital products. Every project I undertake serves as an opportunity for me to grow and deliver effective solutions that create a tangible impact.
                     </p>
                     <p className="text-gray-400 max-w-xl">
-                    Saya sering bekerja menggunakan HTML, CSS, JavaScript, TypeScript, React, Next.js, dan Tailwind CSS, serta MySQL dan Python dasar. Untuk desain dan pengembangan UI, saya mengandalkan Figma dan shadcn/ui guna menciptakan pengalaman pengguna yang bersih, responsif, dan konsisten.
+                    I frequently work with HTML, CSS, JavaScript, TypeScript, React, Next.js, and Tailwind CSS, as well as MySQL and basic Python. For UI design and development, I rely on Figma and shadcn/ui to create clean, responsive, and consistent user experiences.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                         <div className="p-4 rounded-xl bg-surface border border-border text-center">

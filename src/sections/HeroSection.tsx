@@ -37,7 +37,7 @@ export default function HeroSection() {
                     </h1>
 
                     <p data-aos="fade-up" data-aos-delay="400" className="text-gray-400 max-w-lg tracking-wide">
-                       Saya seorang Full Stack Web Developer dengan minat besar terhadap rekayasa perangkat lunak. Saya mengembangkan aplikasi web yang skalabel menggunakan Next.js, TypeScript, dan Supabase. Saya berkomitmen untuk terus belajar, menjaga arsitektur kode yang bersih, serta menghadirkan solusi digital yang fungsional.
+                        I am a Full Stack Web Developer with a strong passion for software engineering. I develop scalable web applications using Next.js, TypeScript, and Supabase. I am committed to continuous learning, maintaining clean code architecture, and delivering functional digital solutions.
 
                     </p>
 
