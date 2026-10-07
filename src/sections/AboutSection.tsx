@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { LuCode, LuDatabase, LuRocket } from "react-icons/lu";
-import  DotGrid  from "@/components/hero/background";
+// import  DotGrid  from "@/components/hero/background";
 
 export default function AboutSection() {
     return (

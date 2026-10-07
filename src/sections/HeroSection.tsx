@@ -1,4 +1,4 @@
-import  DotGrid  from "@/components/hero/background";
+// import  DotGrid  from "@/components/hero/background";
 import LinkButton from "@/components/ui/LinkButton";
 import { LuArrowRight } from "react-icons/lu";
 import Image  from "next/image";
