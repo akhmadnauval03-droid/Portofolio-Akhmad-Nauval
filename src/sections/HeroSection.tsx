@@ -10,9 +10,9 @@ export default function HeroSection() {
             <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
 
             {/* background */}
-            <div className="inset-0 absolute">
+            {/* <div className="inset-0 absolute">
                 <DotGrid
-                dotSize={2}
+                dotSize={3}
                 gap={15}
                 baseColor="#2F293A"
                 activeColor="#20b2a6"
@@ -22,7 +22,7 @@ export default function HeroSection() {
                 resistance={750}
                 returnDuration={1.5}
             />
-            </div>
+            </div> */}
             {/* content */}
             <div className="relative z-10 w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                 {/* leftside */}

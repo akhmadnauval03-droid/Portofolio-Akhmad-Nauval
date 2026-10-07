@@ -8,14 +8,15 @@ import { Toaster } from "react-hot-toast";
 import AnimationLayout from "@/components/layout/AnimationLayout";
 import SplashScreen from "@/components/splah screen/SplashScreen";
 import Navbar from "@/components/navbar/Navbar";
+import Bg2 from "@/components/hero/bg2";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <SplashScreen />
-
       <AnimationLayout>
+        <Bg2 />
         <HeroSection />
         <AboutSection />
         <ProjectSection />

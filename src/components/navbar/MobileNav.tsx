@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LuDownload } from "react-icons/lu";
 
 interface MobileNavProps {
     links: { href: string; label: string }[];
@@ -32,6 +33,15 @@ export default function MobileNav({ links, navOpen, onClose }: MobileNavProps) {
                         </li>
                     ))}
                 </ul>
+                <a
+                    href="/documents/cv.pdf"
+                    download
+                    onClick={onClose}
+                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary bg-primary px-6 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-primary"
+                >
+                    <LuDownload aria-hidden="true" />
+                    Download CV
+                </a>
             </aside>
         </>
     );
