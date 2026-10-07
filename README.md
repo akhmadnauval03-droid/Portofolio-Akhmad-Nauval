@@ -225,3 +225,25 @@ Data project diambil dari:
 `src/data/proyek.ts`
 
 Sehingga setiap project dapat memiliki halaman detail masing-masing tanpa harus membuat halaman baru secara manual untuk setiap project.
+
+## 🗄️ Database Supabase
+
+Project ini menggunakan **Supabase** sebagai database untuk menyimpan data project portfolio.
+
+### Tabel `Projects`
+
+| Kolom | Tipe Data | Keterangan |
+|---|---|---|
+| `id` | bigint / integer | ID unik setiap project |
+| `slug` | text | Identitas project untuk URL halaman detail |
+| `title` | text | Nama atau judul project |
+| `category` | text | Kategori project, seperti `web`, `mobile`, `iot`, dan `ui/ux` |
+| `description` | text | Deskripsi singkat project |
+| `detail_description` | text | Deskripsi lengkap/detail project |
+| `image` | text | Path atau URL gambar project |
+| `tags` | text[] | Daftar tag yang digunakan pada project |
+| `technologies` | text[] | Daftar teknologi yang digunakan pada project |
+| `githubURL` | text | URL repository GitHub project |
+| `liveURL` | text | URL website/demo project |
+
+Data pada tabel `Projects` digunakan pada halaman detail project berdasarkan nilai `slug`. Supabase terhubung dengan aplikasi Next.js menggunakan `NEXT_PUBLIC_SUPABASE_URL` dan `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
