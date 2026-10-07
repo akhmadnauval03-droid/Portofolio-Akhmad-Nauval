@@ -34,7 +34,7 @@ export default function NotFound() {
         </h1>
 
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
-          Kembali ke beranda untuk melanjutkan melihat portfolio saya atau lihat project saya.
+          Return to the home page to continue viewing my portfolio or check out my projects.
         </p>
 
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
