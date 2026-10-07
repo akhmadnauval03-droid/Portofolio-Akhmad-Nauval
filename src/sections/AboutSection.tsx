@@ -14,7 +14,7 @@ export default function AboutSection() {
                         <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-2xl" />
 
                         <div className="w-[85%] h-[85%] relative">
-                            <Image fill src="/images/Z.jpeg" alt="About me" className="z-10 object-cover rounded-xl" />
+                            <Image fill src="/images/a.png" alt="About me" className="z-10 object-cover rounded-xl" />
                         </div>
                     </div>
                 </div>

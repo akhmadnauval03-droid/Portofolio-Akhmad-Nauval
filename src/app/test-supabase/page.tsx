@@ -10,9 +10,10 @@ export default async function TestSupabasePage() {
     );
   }
 
-  const { count, error } = await supabase
-    .from('proyek')
-    .select('*', { count: 'exact', head: true });
+  const { data, count, error } = await supabase
+    .from('Projects')
+    .select('*')
+    .order('id', { ascending: true });
 
   if (error) {
     console.error('Gagal menguji koneksi Supabase:', error);

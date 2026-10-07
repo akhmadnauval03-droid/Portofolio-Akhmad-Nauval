@@ -18,14 +18,14 @@ import {
   SiJavascript,
   SiNextdotjs,
   SiReact,
-  SiSupabase,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
 
 import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
 import Footer from "@/sections/Footer";
-import { projects } from "@/data/projects";
+// import { projects } from "@/data/projects";
+import { supabase } from "@/lib/supabase"
 
 const technologyIcons: Record<string, IconType> = {
   HTML: SiHtml5,
@@ -37,7 +37,6 @@ const technologyIcons: Record<string, IconType> = {
   Tailwind: SiTailwindcss,
   TypeScript: SiTypescript,
   Figma: SiFigma,
-  Supabase: SiSupabase,
 };
 
 type PageProps = {
@@ -51,11 +50,17 @@ export default async function ProjectDetailPage({
 }: PageProps) {
   const { slug } = await params;
 
-  const projectIndex = projects.findIndex(
-    (item) => item.slug === slug
-  );
+  if (!supabase) {
+    notFound();
+  }
 
-  const project = projects[projectIndex];
+  const { data: projects, error } = await supabase
+    .from('Projects')
+    .select('*')
+    .order('id', { ascending: true });
+
+  const project = projects?.find((item) => item.slug === slug);
+  const projectIconList = project?.technologies.trim().split(",") || [];
 
   if (!project) {
     notFound();
@@ -63,10 +68,12 @@ export default async function ProjectDetailPage({
 
   const detailParagraphs = project.detail_description
     .split(/\n{2,}/)
-    .map((paragraph) => paragraph.trim())
+    .map((paragraph: string) => paragraph.trim())
     .filter(Boolean);
 
-  const projectNumber = String(projectIndex + 1).padStart(2, "0");
+  const projectNumber = String(
+    (projects?.findIndex((item) => item.slug === slug) ?? -1) + 1
+  ).padStart(2, "0");
 
   return (
     <>
@@ -75,9 +82,9 @@ export default async function ProjectDetailPage({
           BACKGROUND EFFECT
       ====================================================== */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-[-250px] h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#20b8b5]/10 blur-[150px]" />
+        <div className="absolute left-1/2 -top-62.5 h-150 w-150 -translate-x-1/2 rounded-full bg-[#20b8b5]/10 blur-[150px]" />
 
-        <div className="absolute left-[-200px] top-[40%] h-[400px] w-[400px] rounded-full bg-[#20b8b5]/5 blur-[130px]" />
+        <div className="absolute left-[-200px] top-[40%] h-100 w-100 rounded-full bg-[#20b8b5]/5 blur-[130px]" />
 
         <div className="absolute bottom-[-200px] right-[-150px] h-[500px] w-[500px] rounded-full bg-[#20b8b5]/5 blur-[140px]" />
 
@@ -203,7 +210,7 @@ export default async function ProjectDetailPage({
                 </p>
 
                 <h2 className="mt-1 text-2xl font-bold">
-                  Tentang Project
+                  About the Project
                 </h2>
               </div>
             </div>
@@ -211,7 +218,7 @@ export default async function ProjectDetailPage({
             <div className="mb-7 h-px w-full bg-gradient-to-r from-[#20b8b5]/40 via-white/5 to-transparent" />
 
             <div className="max-w-3xl space-y-5 text-base leading-8 text-gray-400 md:text-[17px]">
-              {detailParagraphs.map((paragraph, index) => (
+              {detailParagraphs.map((paragraph: string, index: number) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
@@ -241,9 +248,8 @@ export default async function ProjectDetailPage({
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((technology) => {
-                  const Icon =
-                    technologyIcons[technology] ?? LuCodeXml;
+                {projectIconList.map((technology: string) => {
+                  const Icon = technologyIcons[technology] ?? LuCodeXml;
 
                   return (
                     <span
