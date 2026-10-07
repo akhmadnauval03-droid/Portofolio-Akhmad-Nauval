@@ -1,4 +1,4 @@
-# Portfolio Akhmad Nauval
+# Portofolio Akhmad Nauval
 
 Website portfolio pribadi yang dibuat menggunakan Next.js, TypeScript, dan Tailwind CSS. Website ini digunakan untuk menampilkan informasi diri, skills, dan project yang pernah dibuat, serta informasi kontak.
 
