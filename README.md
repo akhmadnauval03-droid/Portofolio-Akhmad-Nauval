@@ -247,3 +247,106 @@ Project ini menggunakan **Supabase** sebagai database untuk menyimpan data proje
 | `liveURL` | text | URL website/demo project |
 
 Data pada tabel `Projects` digunakan pada halaman detail project berdasarkan nilai `slug`. Supabase terhubung dengan aplikasi Next.js menggunakan `NEXT_PUBLIC_SUPABASE_URL` dan `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+
+## 🔐 Halaman Login Admin
+
+Website ini memiliki halaman login admin yang digunakan untuk membatasi akses ke dashboard pengelolaan proyek.
+
+Halaman login menggunakan **Supabase Authentication** untuk memverifikasi email dan password pengguna.
+
+Fitur login meliputi:
+
+- Login menggunakan email dan password.
+- Validasi input sebelum proses login.
+- Menampilkan pesan ketika login gagal.
+- Mengarahkan pengguna ke dashboard setelah login berhasil.
+- Mengelola sesi autentikasi menggunakan Supabase.
+
+Route halaman login:
+
+`/admin/login`
+
+## 📊 Dashboard Admin Proyek
+
+Dashboard admin digunakan untuk mengelola data proyek portfolio tanpa harus mengubah data secara manual melalui kode program.
+
+Route dashboard:
+
+`/admin/proyek`
+
+### Fitur Dashboard
+
+Beberapa fitur yang tersedia pada dashboard admin meliputi:
+
+- **Statistik proyek** untuk menampilkan jumlah proyek.
+- **Tambah proyek** untuk memasukkan data proyek baru.
+- **Edit proyek** untuk memperbarui informasi proyek.
+- **Hapus proyek** untuk menghapus data proyek.
+- **Pencarian proyek** berdasarkan informasi yang tersedia.
+- **Filter kategori** untuk mempermudah pencarian proyek.
+- **Pengelolaan gambar proyek** melalui form proyek.
+- **Integrasi Supabase** untuk menyimpan dan memperbarui data proyek.
+
+Dashboard dirancang menggunakan Tailwind CSS dengan tampilan modern, responsif, dan konsisten dengan tema website portfolio.
+
+### Data Proyek yang Dikelola
+
+Data proyek disimpan pada tabel `Projects` di Supabase dengan beberapa kolom, seperti:
+
+- `id`
+- `slug`
+- `title`
+- `category`
+- `description`
+- `detail_description`
+- `image`
+- `tags`
+- `technologies`
+- `githubURL`
+- `liveURL`
+
+Data tersebut digunakan untuk menampilkan informasi proyek pada website portfolio dan halaman detail proyek.
+
+## 🗄️ Integrasi Supabase
+
+Supabase digunakan untuk mendukung autentikasi admin dan pengelolaan data proyek.
+
+Helper Supabase dipisahkan menjadi dua file:
+
+- `lib/supabase-server.ts` untuk kebutuhan Supabase di sisi server.
+- `lib/supabase-browser.ts` untuk kebutuhan Supabase di sisi browser.
+
+Konfigurasi koneksi disimpan dalam file `.env.local` menggunakan variabel lingkungan yang diperlukan.
+
+File `.env.local` tidak disertakan dalam repository GitHub untuk menjaga keamanan konfigurasi lokal.
+
+## 📁 Struktur Halaman Admin
+
+Struktur halaman admin yang dikembangkan:
+
+```text
+app/
+└── admin/
+    ├── login/
+    │   └── page.tsx
+    └── proyek/
+        ├── page.tsx
+        └── ...
+lib/
+├── supabase-server.ts
+└── supabase-browser.ts
+middleware.ts
+```
+
+Struktur di atas merupakan gambaran umum. Sesuaikan nama dan lokasi file dengan struktur aktual proyek.
+
+## 🚀 Alur Penggunaan Admin
+
+1. Admin membuka halaman `/admin/login`.
+2. Admin memasukkan email dan password.
+3. Supabase memverifikasi informasi login.
+4. Setelah berhasil, admin diarahkan ke `/admin/proyek`.
+5. Admin dapat menambah, mengedit, mencari, memfilter, dan menghapus proyek.
+6. Perubahan data disimpan melalui integrasi Supabase.
+
+Pengembangan ini bertujuan mempelajari penerapan autentikasi, pengelolaan database, dan operasi CRUD (*Create, Read, Update, Delete*) pada aplikasi Next.js.
