@@ -45,8 +45,18 @@ export default function ProjectCard({
     return (
         <div className="group relative overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 ease-out hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
             <div className="relative h-60 overflow-hidden md:h-64">
-                <Image src={image} alt={title} fill className="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
-
+                {/* <Image src={image} alt={title} fill className="w-full h-full object-cover transition duration-500 group-hover:scale-105" /> */}
+                    {image && image.trim() !== "" ? (
+                    <img
+                        src={image}
+                        alt={title}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    ) : (
+                    <div className="flex items-center justify-center h-full w-full bg-surface text-text-muted text-xs">
+                        Tidak ada gambar
+                    </div>
+                    )}
                 <div className="absolute inset-0 bg-background/50 opacity-0 group-hover:opacity-100 transition" />
             </div>
 

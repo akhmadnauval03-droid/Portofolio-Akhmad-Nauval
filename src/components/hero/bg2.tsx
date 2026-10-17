@@ -2,7 +2,7 @@
 
 export default function AnimatedBackground() {
     return (
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#05070D]">
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none bg-[#05070D]">
 
             {/* ================= GLOW ================= */}
             <div className="bg-orb orb-cyan" />

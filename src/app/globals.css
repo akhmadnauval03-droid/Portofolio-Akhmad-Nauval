@@ -46,6 +46,33 @@ body{
   height: 100%;
 }
 
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+
 /* =====================================================
    DEVELOPER AMBIENT BACKGROUND
 ===================================================== */
@@ -137,7 +164,6 @@ body{
     }
 }
 
-
 /* =====================================================
    GRID
 ===================================================== */
@@ -166,7 +192,6 @@ body{
         transparent
     );
 }
-
 
 /* =====================================================
    MOVING LIGHT
@@ -290,7 +315,6 @@ body{
     }
 }
 
-
 /* =====================================================
    CIRCUIT
 ===================================================== */
@@ -393,7 +417,6 @@ body{
     }
 }
 
-
 /* =====================================================
    CONNECTING NODES
 ===================================================== */
@@ -462,7 +485,6 @@ body{
     }
 }
 
-
 /* =====================================================
    CONNECTION LINES
 ===================================================== */
@@ -510,7 +532,6 @@ body{
     left: 72%;
     transform: rotate(145deg);
 }
-
 
 /* =====================================================
    RINGS
@@ -572,7 +593,6 @@ body{
     }
 }
 
-
 /* =====================================================
    HEXAGONS
 ===================================================== */
@@ -620,7 +640,6 @@ body{
         transform: translateY(-20px) rotate(8deg);
     }
 }
-
 
 /* =====================================================
    CODE DECORATION
@@ -670,7 +689,6 @@ body{
     }
 }
 
-
 /* =====================================================
    SCANNING LINE
 ===================================================== */
@@ -714,7 +732,6 @@ body{
         opacity: 0;
     }
 }
-
 
 /* =====================================================
    TINY PARTICLES
@@ -773,7 +790,6 @@ body{
     }
 }
 
-
 /* =====================================================
    VIGNETTE
 ===================================================== */
@@ -790,27 +806,3 @@ body{
             rgba(5, 7, 13, 0.75) 100%
         );
 }
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
